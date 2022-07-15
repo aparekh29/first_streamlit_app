@@ -8,6 +8,7 @@ def get_fruityvice_data( this_fruit_choice ):
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
     # Normalize json to rows and columns.
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    return fruityvice_normalized
 
 streamlit.title("My Parents New Healthy Diner")
 streamlit.header("Breakfast Menu")
